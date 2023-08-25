@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+  
+  $('#menu-bar').click(function(){
+      $(this).toggleClass('fa-times');
+      $('.navbar').toggleClass('nav-toggle');
+  });
+  });
+
+  
+  </script>
+    <style>
+       @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+:root {
+  --yellow:#3b8d34;
+  --black:#111;
+  --white:#fff;
+  --light-color:#666;
+  --light-bg:#eee;
+  --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+  --border:.1rem solid rgba(0,0,0,.3);
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  overflow: auto;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--yellow);
+}
+
+section {
+  padding: 14rem 40%;
+  padding-right: 20%;
+  
+}
+      .heading {
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  color: var(--black);
+  text-transform: capitalize;
+  padding-left: 1rem;
+  border-left: 1rem solid var(--yellow);
+}
+      header{
+  position: fixed;
+  top:0; left:0;
+  z-index: 1000;
+  width:100%;
+  background:#fff;
+  padding:1.5rem 10%;
+  box-shadow: 0 .3rem 2rem rgba(0,0,0,.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+header .logo img{
+  height:5rem;
+}
+
+header .navbar ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+header .navbar ul li{
+  margin-left: 3rem;
+}
+
+header .navbar ul li a{
+  font-size: 1.7rem;
+  color:#666;
+}
+
+header .navbar ul li a.active,
+header .navbar ul li a:hover{
+  color:var(--yellow);
+}
+
+header #menu-bar{
+  font-size: 3rem;
+  color:#666;
+  cursor: pointer;
+  display: none;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background: var(--black);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+.btn:hover {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    padding: 1.5rem 2rem;
+  }
+  section {
+    padding: 3rem 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+  section {
+    padding: 3rem 2rem;
+  }
+  .header #menu-btn {
+    display: inline-block;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-top: var(--border);
+    border-bottom: var(--border);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    -webkit-transition: .2s linear;
+    transition: .2s linear;
+  }
+  .header .navbar.active {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .header .navbar a {
+    display: block;
+    margin: 2rem;
+  }
+}
+
+@media (max-width:768px){
+
+
+header #menu-bar{
+    display: block;
+}
+
+header .navbar{
+    position: fixed;
+    top:8rem; left:0;
+    width:100%;
+    background:var(--yellow);
+    border-top: .2rem solid rgba(0,0,0,.1);
+    transform:scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+}
+
+header .navbar ul{
+    flex-flow: column;
+    padding:2rem;
+}
+
+header .navbar ul li{
+    margin:1.5rem;
+    width: 100%;
+}
+
+header .navbar ul li a{
+    display: block;
+    color:#fff;
+    padding-left: 2rem;
+    border-left: .2rem solid #fff;
+    font-size: 2rem;
+}
+
+header .navbar ul li a:hover,
+header .navbar ul li a.active{
+    color:#333;
+    border-color: #333;
+}
+
+.fa-times{
+    transform:rotate(180deg);
+}
+
+header .navbar.nav-toggle{
+    transform:scaleY(1);
+    opacity: 1;
+}
+}
+.carousel-container {
+  position: relative;
+  width: 80%;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 5.8%;
+}
+
+.carousel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #888;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.indicator.active {
+  background-color: #333;
+}
+
+.slide img
+{
+    width: 100%;
+    height: 100%;
+}
+.hostel-main{
+    width: 100%;
+    height: 500px;
+    background-image: url("images/animation-engineering-buildings-042720-1.gif");
+    background-position: center;
+    background-size: 1300px;
+    background-repeat: no-repeat;
+    
+
+}
+.hostel-items{
+    width: 1000px;
+    margin:   auto;
+    padding: 30px 0px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.inner-items{
+    width: 100%;
+    padding: 170px 10px;
+    border-radius: 20px;
+    
+}
+.inner-items select{
+    padding: 10px 20px;
+    color: white;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    background-color: rgb(24, 131, 143);
+
+}
+.search-city{
+    width: 100%;
+    margin: 5%;
+}
+
+.search-items{
+    border: none; 
+}
+.search-items input {
+    font-weight: 500;
+    font-size: 16px;
+   padding: 10px 30px;
+   background-color: white;
+   border: none;
+   border-radius: 12px;
+}
+.hostel-facilities{
+    width: 100%;
+    margin: 30px 0px ;
+    padding: 0px 20%;
+  
+}
+.hostel-facilities span{
+    font-size: 24px;
+    margin-left: 10px;
+    font-weight: 600;
+ border-bottom: 2px solid rgb(24, 131, 143);
+
+
+}
+.facilities-inner{
+    width: 1000px;
+   padding-top: 30px;
+   display: flex;
+    gap: 20PX   ;
+   margin-left: 10px;
+}
+.img{
+    width: 350px;
+}
+.img img{
+    width: 100%;
+}
+.inner-texts h2{
+    font-weight: 600;
+    font-size: 23px;
+}
+.inner-input{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.inner-input span{
+    padding: 10px 27px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    margin: 10px;
+    font-weight: 600;
+    background-color: rgb(24, 131, 143);
+}
+.inner-input h3{
+    padding: 10px 27px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    margin: 10px;
+    font-weight: 600;
+    background-color: rgb(24, 131, 143);
+}
+.hostel-rate{
+    margin-top: 10px;
+}
+.hostel-rate p{
+    margin: 10px 0px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.btton{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.btton button{
+    margin-left: 10%;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    background-color: rgb(24, 131, 143);
+   border-radius: 12px;
+   font-size: 17px;
+   font-weight: 600;
+   color: white;
+}
+footer{
+  background-color: #000000ff;
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  padding: 3rem 1rem;
+}
+.container {
+ max-width: 1140px;
+ margin: 0 auto;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+
+
+}
+.row{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-top: 10%;
+}
+
+.col{
+ min-width: 250px;
+ color:#f2f2f2f2;
+ font-family: poppins;
+ padding:0 2rem;
+}
+.col .logo{
+ width: 100px;
+ margin-bottom:25px;
+}
+.col h3{
+ color:#ff014fff;
+ margin-bottom: 20px;
+ position: relative;
+ cursor: pointer;
+}
+.col h3::after{
+ content: '';
+ height:3px;
+ width:0px;
+ background-color: #ff014fff;
+ position: absolute;
+ bottom: 0;
+ left:0;
+ transition: 0.3s ease;
+
+}
+.col h3:hover::after{
+ width:30px
+}
+.col .social a i{
+ color:#ff014fff;
+ margin-top:2rem;
+ margin-right: 5px;
+ transition: 0.3s ease;
+}
+.col .social a i:hover{
+ transform: scale(1.5);
+ filter:grayscale(25);
+}
+.col .links a{
+ display: block;
+ text-decoration: none;
+ color:#f2f2f2;
+ margin-bottom: 5px;
+ position: relative;
+ transition: 0.3s ease;
+}
+.col .links a::before{
+ content:'';
+ height: 16px;
+ width:3px;
+ position: absolute;
+ top:5px;
+ left:-10px;
+ background-color: #ff014fff;
+ transition: 0.5s ease;
+ opacity: 0;
+}
+.col .links a:hover::before{
+ opacity: 1;
+}
+.col .links a:hover{
+ transform: translateX(-8px);
+ color:#ff014fff;
+}
+.col .contact-details{
+ display: inline-flex;
+ justify-content: space-between;
+ margin-right: 15;
+}
+.col .contact-details i{
+ margin-right:15px;
+}
+
+
+ .credit {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  padding-top: 2.5rem;
+  font-size: 2rem;
+  color: #666;
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+ .credit span {
+  color: #103cd0;
+}
+/********** Responsive Design ********/
+@media(max-width:900px)
+{
+.row{
+ flex-direction: column;
+}
+.col{
+ width: 100%;
+ text-align: left;
+ margin-bottom: 25px;
+}
+}
+@media(max-width:768px)
+{
+.row{
+ flex-direction: column;
+}
+.col{
+ width: 100%;
+ text-align: left;
+ margin-bottom: 20px;
+}
+}
+
+    </style>
+
+</head>
+<body>
+  <header>
+
+    <a href="#" class="logo"><img src="images/logo.png" alt=""></a>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="file:///C:/Users/Acer/Desktop/demo%20project/demo.html#home">Home</a></li>
+            <li><a href="#pg">PG</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#contact">contact</a></li>
+            <li> <a class="bton" href="login.html" title="Sign In">Sign In</a></li>
+         <li> <a class="bton" href="register.html" title="Sign Up">Sign Up</a></li>
+            
+            
+            
+        </ul>
+    </nav>
+
+</header>
+     <div class="carousel-container">
+        <div class="carousel">
+          <div class="slide active">
+            <img src="images/Desktop - 1.png" alt="">
+          </div>
+          <div class="slide">
+            <img src="images/Desktop - 2 (online-video-cutter.com).gif" alt="Image 2">
+          </div>
+        </div>
+        <div class="indicators"></div>
+      </div>
+      <div class="hostel-main">
+        <div class="hostel-items">
+          <div class="inner-items">
+            <select name="" id="">
+              <option>RAJASTHAN</option>
+              <option>JODHPUR</option>
+              <option>JAIPUR</option>
+              <option>AJMER</option>
+            </select>
+          </div>
+  
+          <div class="inner-items">
+            <select name="" id="">
+              <option>MUMBAI</option>
+              <option>JODHPUR</option>
+              <option>JAIPUR</option>
+              <option>AJMER</option>
+            </select>
+          </div>
+  
+          <div class="inner-items">
+            <select name="" id="">
+              <option>BIHAR</option>
+              <option>JODHPUR</option>
+              <option>JAIPUR</option>
+              <option>AJMER</option>
+            </select>
+          </div>
+  
+          <div class="inner-items">
+            <select name="" id="">
+              <option>DELHI</option>
+              <option>JODHPUR</option>
+              <option>JAIPUR</option>
+              <option>AJMER</option>
+            </select>
+          </div>
+          <div class="search-city">
+            <div class="search-items">
+              <input type="search" placeholder="Search City" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hostel-facilities">
+        <span>40PG Waiting to be yours city </span>
+        <div class="facilities-inner">
+          <div class="img">
+            <img src="images/gallery1-s.jpg" alt="" />
+          </div>
+          <div class="inner-texts">
+            <h2>Baston House</h2>
+            <br />
+            <p>2 rooms AC</p>
+            <div class="inner-input">
+              <h3>ROOM AIR</h3>
+              <h3>STUDY SPACES</h3>
+              <span>FOOD FACILITIES </span>
+            </div>
+            <div class="hostel-rate">
+              <p>starts bars</p>
+              <div class="btton">
+                <h2>$20</h2>
+                <button>VISIT IT</button>
+                <button>BOOK OUR HOSTEL</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="facilities-inner">
+          <div class="img">
+            <img src="images/gallery1-s.jpg" alt="" />
+          </div>
+          <div class="inner-texts">
+            <h2>Baston House</h2>
+            <br />
+            <p>2 rooms AC</p>
+            <div class="inner-input">
+              <h3>ROOM AIR</h3>
+              <h3>STUDY SPACES</h3>
+              <span>FOOD FACILITIES </span>
+            </div>
+            <div class="hostel-rate">
+              <p>starts bars</p>
+              <div class="btton">
+                <h2>$20</h2>
+                <button>VISIT IT</button>
+                <button>BOOK OUR HOSTEL</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="facilities-inner">
+          <div class="img">
+            <img src="images/gallery1-s.jpg" alt="" />
+          </div>
+          <div class="inner-texts">
+            <h2>Baston House</h2>
+            <br />
+            <p>2 rooms AC</p>
+            <div class="inner-input">
+              <h3>ROOM AIR</h3>
+              <h3>STUDY SPACES</h3>
+              <span>FOOD FACILITIES </span>
+            </div>
+            <div class="hostel-rate">
+              <p>starts bars</p>
+              <div class="btton">
+                <h2>$20</h2>
+                <button>VISIT IT</button>
+                <button>BOOK OUR HOSTEL</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="facilities-inner">
+          <div class="img">
+            <img src="images/gallery1-s.jpg" alt="" />
+          </div>
+          <div class="inner-texts">
+            <h2>Baston House</h2>
+            <br />
+            <p>2 rooms AC</p>
+            <div class="inner-input">
+              <h3>ROOM AIR</h3>
+              <h3>STUDY SPACES</h3>
+              <span>FOOD FACILITIES </span>
+            </div>
+            <div class="hostel-rate">
+              <p>starts bars</p>
+              <div class="btton">
+                <h2>$20</h2>
+                <button>VISIT IT</button>
+                <button>BOOK OUR HOSTEL</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="facilities-inner">
+          <div class="img">
+            <img src="images/gallery1-s.jpg" alt="" />
+          </div>
+          <div class="inner-texts">
+            <h2>Baston House</h2>
+            <br />
+            <p>2 rooms AC</p>
+            <div class="inner-input">
+              <h3>ROOM AIR</h3>
+              <h3>STUDY SPACES</h3>
+              <span>FOOD FACILITIES </span>
+            </div>
+            <div class="hostel-rate">
+              <p>starts bars</p>
+              <div class="btton">
+                <h2>$20</h2>
+                <button>VISIT IT</button>
+                <button>BOOK OUR HOSTEL</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>  
+        <!-- footer section starts  -->
+<footer>
+  <div class="container">
+      <div class="row">
+            <div class="col" id="company">
+                <img src="images/logo.png" alt="" class="logo">
+                <p>
+                  SUCCESS ISN'T YOUR HOME.ITS PAYING GUEST HOUSE.THOSE WHO WILL PAY THEY WILL STAY
+                </p>
+                <div class="social">
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-youtube"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+
+            <div class="col" id="services">
+               <h3>Location</h3>
+               <div class="links">
+                  <a href="#">Jodhpur</a>
+                  <a href="#">Jaipur</a>
+                  <a href="#">Jaisalmer</a>
+                  <a href="#">Udaipur</a>
+               </div>
+            </div>
+
+            <div class="col" id="useful-links">
+               <h3>Quick Links</h3>
+               <div class="links">
+                  <a href="#">Home</a>
+                  <a href="#">PG</a>
+                  <a href="#">About</a>
+                  <a href="#">Contact</a>
+               </div>
+            </div>
+
+            <div class="col" id="contact">
+                <h3>Contact</h3>
+                <div class="contact-details">
+              <i class='	fas fa-location-arrow' style="color:red"></i>
+                   <p>Shastri Nagar, Jodhpur, Rajasthan 342003
+                  </p>
+                </div>
+                <div class="contact-details">
+                   <i class="fa fa-phone"></i>
+                   <p>+91-6377409450</p>
+                </div>
+            </div>
+      </div>
+
+  </div>
+  <div class="credit"> created&developed by <span>Socius Coder</span> | all rights reserved! </div>
+
+</footer>
+
+
+<!-- footer section ends -->
+      <script>
+        const carousel = document.querySelector('.carousel');
+const slides = document.querySelectorAll('.slide');
+const indicatorsContainer = document.querySelector('.indicators');
+let currentIndex = 0;
+let timer;
+
+// Show slide based on index
+function showSlide(index) {
+  carousel.style.transform = `translateX(-${index * 100}%)`;
+  slides.forEach((slide, i) => {
+    if (i === index) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
+    }
+  });
+  currentIndex = index; // Update currentIndex
+  updateIndicators(index);
+}
+
+// Function to move to the next slide
+function moveToNextSlide() {
+  currentIndex++;
+  if (currentIndex >= slides.length) {
+    currentIndex = 0;
+  }
+  showSlide(currentIndex);
+}
+
+// Create indicators
+function createIndicators() {
+  slides.forEach((_, index) => {
+    const indicator = document.createElement('div');
+    indicator.classList.add('indicator');
+    indicator.addEventListener('click', () => {
+      showSlide(index);
+      clearInterval(timer);
+      startAutoScroll();
+    });
+    indicatorsContainer.appendChild(indicator);
+  });
+}
+
+// Update active indicator
+function updateIndicators(index) {
+  const indicators = document.querySelectorAll('.indicator');
+  indicators.forEach((indicator, i) => {
+    if (i === index) {
+      indicator.classList.add('active');
+    } else {
+      indicator.classList.remove('active');
+    }
+  });
+}
+
+// Function to start the auto-scrolling
+function startAutoScroll() {
+  timer = setInterval(moveToNextSlide, 3000); // Change slide every 3 seconds (adjust as needed)
+}
+
+// Function to stop the auto-scrolling
+function stopAutoScroll() {
+  clearInterval(timer);
+}
+
+// Show initial slide, create indicators, and start auto-scrolling
+showSlide(currentIndex);
+createIndicators();
+startAutoScroll();
+
+    </script>
+</body>
+</html>

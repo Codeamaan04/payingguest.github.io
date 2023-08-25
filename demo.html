@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Paying Guest Website</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/css/lightgallery.min.css">
+
+   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="style.css">
+  
+  <script>
+		document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+    var popup = document.getElementById("register_id");
+    popup.style.display = "block";
+  }, 3800); // Adjust the delay time (in milliseconds) as needed
+});
+
+      function closed()
+      {
+         var popup = document.getElementById("register_id");
+    popup.style.display = "none"; 
+      }
+
+		  </script>
+</head>
+<body>
+  <div id="preloader"></div> 
+
+  
+
+   <header>
+
+      <a href="#" class="logo"><img src="images/logo.png" alt=""></a>
+  
+      <div id="menu-bar" class="fas fa-bars"></div>
+  
+      <nav class="navbar">
+          <ul>
+              <li><a class="active" href="#home">Home</a></li>
+              <li><a href="automatic.html">PG</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#blogs">Blogs</a></li>
+              <li><a href="#contact">contact</a></li>
+              <li> <a class="bton" href="login.html" title="Sign In">Sign In</a></li>
+             <li> <a class="bton" href="register.html" title="Sign Up">Sign Up</a></li>
+              
+              
+          </ul>
+      </nav>
+  
+  </header>
+
+
+<!-- home section starts  -->
+
+  <div class="reg" id="register_id">
+   <div class="view">
+
+   <form action="#" id="reg_form">
+      <div class="title">
+       <p>Registration</p>
+       <button class="close" id="close_btn" onclick="closed()">&times;</buttonv>
+   </div>
+       <div class="user_details">
+           <div class="input_box">
+               <label for="name">Full Name</label>
+               <input type="text" id="name" placeholder="Enter your name" required>
+           </div>
+           <div class="input_box">
+               <label for="username">Username</label>
+               <input type="text" id="username" placeholder="Enter your username" required>
+           </div>
+           <div class="input_box">
+               <label for="email">Email</label>
+               <input type="email" id="email" placeholder="Enter your email" required>
+           </div>
+           <div class="input_box">
+               <label for="phone">Phone Number</label>
+               <input type="number" id="phone" placeholder="Enter your number" required>
+           </div>
+           <div class="input_box">
+               <label for="pass">Password</label>
+               <input type="password" id="pass" placeholder="Enter your password" required>
+           </div>
+           <div class="input_box">
+               <label for="confirmPass">Confirm Password</label>
+               <input type="password" id="confirmPass" placeholder="Confirm your password" required>
+           </div>
+       </div>
+       <div class="gender">
+           <span class="gender_title">Gender</span>
+           <input type="radio" name="gender" id="radio_1">
+           <input type="radio" name="gender" id="radio_2">
+           <input type="radio" name="gender" id="radio_3">
+
+           <div class="category">
+               <label for="radio_1">
+                   <span class="dot one"></span>
+                   <span>Male</span>
+               </label>
+               <label for="radio_2">
+                   <span class="dot two"></span>
+                   <span>Female</span>
+               </label>
+               <label for="radio_3">
+                   <span class="dot three"></span>
+                   <span>Prefer not to say</span>
+               </label>
+           </div>
+       </div>
+       <div class="reg_btn">
+           <input type="submit" value="Register">
+       </div>
+   </form>
+</div>
+   <!-- <a href="demo.html"> <button class="button button1">Back</button></a> -->
+</div>
+
+<section class="home" id="home">
+
+
+   
+ 
+
+   <div class="swiper home-slider">
+
+      <div class="swiper-wrapper">
+
+         <section class="swiper-slide slide" style="background: url(images/rooms\ 2.jpg) no-repeat;">
+            <div class="content">
+               <h4>Find your next perfect place to live  </h4>
+               <p>SUCCESS ISN'T YOUR HOME . ItS PAYING GUEST HOUSE.THOSE WHO WILL PAY THEY WILL STAY</p>
+               <a href="#" class="btn">get started</a>
+            </div>
+         </section>
+
+         <section class="swiper-slide slide" style="background: url(images/rooms3.webp) no-repeat;">
+            <div class="content">
+               <h4>BEAUTY IS EVERYWHERE <br> A WELCOME GUEST</h4>
+               <p>A guest never forgets . The host who has treated him kindly</p>
+               <a href="#" class="btn">get started</a>
+            </div>
+         </section>
+
+         <section class="swiper-slide slide" style="background: url(images/rooms\ 1.jpg) no-repeat;">
+            <div class="content">
+               <h4>UNINVITED GUESTS SELDOM<br> MEET A WELCOME</h4>
+               <p>We greet you with great delight to have a comfortable stay at our house</p>
+               <a href="#" class="btn">get started</a>
+            </div>
+         </section>
+
+      </div>
+
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+   </div>
+   
+</section>
+
+<!-- home section ends -->
+
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+   <h1 class="heading"> about us </h1>
+
+   <div class="row">
+
+      <div class="video">
+         <video src="images/cabin-112027.mp4" loop muted autoplay></video>
+      </div>
+
+      <div class="content">
+         <h3>In Our Home Let love Abide And Bless ALL Those Who Step Inside!</h3>
+         <p>"Life simplified - choose our PG facilities for hassle-free living."</p>
+         <a href="https://en.wikipedia.org/wiki/Paying_Guests" class="btn">read more</a>
+      </div>
+
+   </div>
+
+   <div class="box-container">
+
+      <div class="box">
+         <h3>10+</h3>
+         <p>years of experience</p>
+      </div>
+
+      
+      <div class="box">
+         <h3>15+</h3>
+         <p>satiesfied guests</p>
+      </div>
+
+      <div class="box">
+         <h3>04+</h3>
+         <p>active guests</p>
+      </div>
+      
+      <div class="box">
+         <h3>Reviews</h3>
+         <p><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i>
+         </p>
+         
+      </div>
+
+   </div>
+
+</section>
+
+<!-- about section ends -->
+<!-- projects section starts  -->
+
+<section class="projects" id="projects">
+
+   <h1 class="heading">Well Furnised Room</h1>
+
+   <div class="box-container">
+
+      <a href="images/furniture2.jpg" class="box">
+         <div class="image">
+            <img src="images/furniture2.jpg" alt="">
+         </div>
+         <div class="content">
+            <div class="info">
+               <h3>Deluxe home</h3>
+               <p>Interior design</p>
+            </div>
+            <i class="fas fa-plus"></i>
+         </div>
+      </a>
+
+      <a href="images/furniture3.jpg" class="box">
+         <div class="image">
+            <img src="images/furniture3.jpg" alt="">
+         </div>
+         <div class="content">
+            <div class="info">
+               <h3>Deluxe home</h3>
+               <p>Interior design</p>
+            </div>
+            <i class="fas fa-plus"></i>
+         </div>
+      </a>
+
+      <a href="images/furniture4.webp" class="box">
+         <div class="image">
+            <img src="images/furniture4.webp" alt="">
+         </div>
+         <div class="content">
+            <div class="info">
+               <h3>luxurious home</h3>
+               <p>Interior design</p>
+            </div>
+            <i class="fas fa-plus"></i>
+         </div>
+      </a>
+
+      <a href="images/furniture5.webp" class="box">
+         <div class="image">
+            <img src="images/furniture5.webp" alt="">
+         </div>
+         <div class="content">
+            <div class="info">
+               <h3>luxurious home</h3>
+               <p>Interior design</p>
+            </div>
+            <i class="fas fa-plus"></i>
+         </div>
+      </a>
+
+      <a href="images/furniture6.webp" class="box">
+         <div class="image">
+            <img src="images/furniture6.webp" alt="">
+         </div>
+         <div class="content">
+            <div class="info">
+               <h3>Deluxe home</h3>
+               <p>Interior design</p>
+            </div>
+            <i class="fas fa-plus"></i>
+         </div>
+      </a>
+
+      <a href="images/furniture1.jpg" class="box">
+         <div class="image">
+            <img src="images/furniture1.jpg" alt="">
+         </div>
+         <div class="content">
+            <div class="info">
+               <h3>Luxurious home</h3>
+               <p>Interior design</p>
+            </div>
+            <i class="fas fa-plus"></i>
+         </div>
+      </a>
+
+   </div>
+
+</section>
+
+<!-- projects section ends -->
+<!-- services section starts  -->
+
+<section class="services" id="services">
+
+   <h1 class="heading"> our services </h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <img src="images/services1.png" alt="">
+         <h3>Food Service</h3>
+         <p>Taste the delicious, 
+            Taste the new,
+            Taste the tasted
+         </p>
+      </div>
+
+      <div class="box">
+         <img src="images/services2.jpg" alt="">
+         <h3>Water Service</h3>
+         <p>Straight from nature to you keep calm and drink water.</p>
+      </div>
+
+      <div class="box">
+         <img src="images/services3.png" alt="">
+         <h3>Electricity Service</h3>
+         <p>Talent is like electricity, we don't understand electricity, we use it.</p>
+      </div>
+
+      <div class="box">
+         <img src="images/services4.webp" alt="">
+         <h3>Air Condition Service </h3>
+         <p>The breeze of a summer is a form of happiness, breathe fresh air.</p>
+      </div>
+
+      <div class="box">
+         <img src="images/services5.jpg" alt="">
+         <h3>Laundry Service</h3>
+         <p>Excited to wear white again.</p>
+      </div>
+
+      <div class="box">
+         <img src="images/services6.jpg" alt="">
+         <h3>Cleaning Service</h3>
+         <p>Do not let beauty hide in dust.</p>
+      </div>
+
+      <div class="box">
+         <img src="images/services7.png" alt="">
+         <h3>Security Service</h3>
+         <p>Your security is our highest priority.</p>
+      </div>
+
+      <div class="box">
+         <img src="images/services8.jpg" alt="">
+         <h3>Heater Service</h3>
+         <p>Hot water,Get ready</p>
+      </div>
+      
+   </div>
+
+</section>
+
+<!-- services section ends -->
+
+<a href="whatsapp://send?phone=14384766790" class="float" target="_blank">
+<i class="fa fa-whatsapp my-float"></i>
+</a>
+<!-- blogs section starts  -->
+
+<section class="blogs" id="blogs">
+
+   <h1 class="heading"> our blogs </h1>
+
+   <div class="swiper blogs-slider">
+
+      <div class="swiper-wrapper">
+
+         <div class="swiper-slide slide">
+            <div class="image">
+               <img src="images/blogs1.webp" alt="">
+            </div>
+            <div class="content">
+               <h3>PG Accomodation in Jodhpur</h3>
+               <p>The safety and security make sure that the PG has 24 horurs security and CCTV</p>
+               <a href="#" class="btn">read more</a>
+            </div>
+         </div>
+
+         <div class="swiper-slide slide">
+            <div class="image">
+               <img src="images/blogs2.avif" alt="">
+            </div>
+            <div class="content">
+               <h3>PG Accomodation in Jodhpur</h3>
+               <p>Check if the PG accomodation provides basic facilities like clean living spaces,food,water etc</p>
+               <a href="#" class="btn">read more</a>
+            </div>
+         </div>
+
+         <div class="swiper-slide slide">
+            <div class="image">
+               <img src="images/blogs3.jpg" alt="">
+            </div>
+            <div class="content">
+               <h3>PG Accomodation in Jodhpur</h3>
+               <p>It should be well-connected to others parts of the city by public transport</p>
+               <a href="#" class="btn">read more</a>
+            </div>
+         </div>
+
+         <div class="swiper-slide slide">
+            <div class="image">
+               <img src="images/blogs4.jpg" alt="">
+            </div>
+            <div class="content">
+               <h3>PG Accomodation in Jodhpur</h3>
+               <p>The location of PG accomodation should be close to your workplace or college university</p>
+               <a href="#" class="btn">read more</a>
+            </div>
+         </div>
+
+         <div class="swiper-slide slide">
+            <div class="image">
+               <img src="images/blogs5.jpg" alt="">
+            </div>
+            <div class="content">
+               <h3>PG Accomodation in Jodhpur</h3>
+               <p>Check if the PG accomodation is gender-specific or co-ed.</p>
+               <a href="#" class="btn">read more</a>
+            </div>
+         </div>
+         
+         <div class="swiper-slide slide">
+            <div class="image">
+               <img src="images/blogs6.jpg" alt="">
+            </div>
+            <div class="content">
+               <h3>PG Accomodation in Jodhpur</h3>
+               <p>Sharing a room can reduce the cost of accomodation ,but it also can lead to privacy issues</p>
+               <a href="#" class="btn">read more</a>
+            </div>
+         </div>
+
+      </div>
+
+   </div>
+
+</section>
+
+<!-- blogs section ends -->
+
+
+
+
+
+<!-- contact section starts  -->
+
+
+<section class="contact" id="contact">
+
+   <h1 class="heading" style="font-size: 50px; margin-left: 0%;"> <span> contact </span> us </h1>
+
+   <div class="row">
+
+       <form onsubmit="mail(); reset(); return false;">
+         <input type="text" placeholder="name"  id="name" class="box">
+         <input type="email" placeholder="email" id="Email" class="box">
+         <input type="number" placeholder="number" id="phone" class="box">
+         <textarea name="" class="box" placeholder="message" id="message" cols="30" rows="10"></textarea>
+         <input type="submit" value="send message" class="btn">
+       </form>
+
+       <div class="image">
+           <img src="images/contact.jpg" alt="">
+       </div>
+
+   </div>
+
+</section>
+
+<!-- client logo section starts -->
+
+
+
+
+<!-- footer section starts  -->
+<footer>
+   <div class="container">
+       <div class="row">
+             <div class="col" id="company">
+                 <img src="images/logo.png" alt="" class="logo">
+                 <p>
+                   SUCCESS ISN'T YOUR HOME.ITS PAYING GUEST HOUSE.THOSE WHO WILL PAY THEY WILL STAY
+                 </p>
+                 <div class="social">
+                   <a href="#"><i class="fab fa-facebook"></i></a>
+                   <a href="#"><i class="fab fa-instagram"></i></a>
+                   <a href="#"><i class="fab fa-youtube"></i></a>
+                   <a href="#"><i class="fab fa-twitter"></i></a>
+                   <a href="#"><i class="fab fa-linkedin"></i></a>
+                 </div>
+             </div>
+ 
+ 
+             <div class="col" id="services">
+                <h3>Location</h3>
+                <div class="links">
+                   <a href="#">Jodhpur</a>
+                   <a href="#">Jaipur</a>
+                   <a href="#">Jaisalmer</a>
+                   <a href="#">Udaipur</a>
+                </div>
+             </div>
+ 
+             <div class="col" id="useful-links">
+                <h3>Quick Links</h3>
+                <div class="links">
+                   <a href="#">Home</a>
+                   <a href="#">PG</a>
+                   <a href="#">About</a>
+                   <a href="#">Contact</a>
+                </div>
+             </div>
+ 
+             <div class="col" id="contact">
+                 <h3>Contact</h3>
+                 <div class="contact-details">
+               <i class='	fas fa-location-arrow' style="color:red"></i>
+                    <p>Shastri Nagar, Jodhpur, Rajasthan 342003
+                   </p>
+                 </div>
+                 <div class="contact-details">
+                    <i class="fa fa-phone"></i>
+                    <p>+91-6377409450</p>
+                 </div>
+             </div>
+       </div>
+ 
+   </div>
+   <div class="credit"> created&developed by <span>Socius Coder</span> | all rights reserved! </div>
+
+ </footer>
+
+
+<!-- footer section ends -->
+
+
+<script type="text/javascript">
+	var popup_login = document.getElementById('form_popup');
+	var close = document.getElementById('close_btn');
+
+	window.addEventListener("Onload", function(){
+
+		setTimeout(function(){
+			popup_login.classList.add('login_popup');
+		 },5000) // 1 secon is 1000ms so 5 second is = to 5000ms.
+
+
+	}) // 5 second popup are working count our time and check it now 
+	// create close btn event
+	close.addEventListener("click", function(){
+			popup_login.classList.remove('eventon');
+		 }) //friends create 5 second popup form you are check for pouse video check the and after i am close btn is work properly 
+	// now add transition
+
+
+</script>
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/1.4.0/js/lightgallery.min.js"></script>
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="script.js"></script>
+
+<script>
+
+lightGallery(document.querySelector('.projects .box-container'));
+
+</script>
+<script>
+   var loader=document.getElementById("preloader");
+   window.addEventListener("load",function(){
+    setTimeout(() => loader.hidden = true, 3000);
+   })
+
+   
+</script>
+<script src="https://smtpjs.com/v3/smtp.js"></script> 
+ <script>
+    function mail(){ 
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("Email").value;
+        let number = document.getElementById("phone").value;
+        let msg = document.getElementById("message").value;
+
+        Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "codeamaan04@gmail.com",
+    Password : "93BB196A443AC81F2C645704556653F0D331",
+    To : 'amaanrafiq0410@gmail.com',
+    From : "codeamaan04@gmail.com",
+    Subject : "mail from contact form",
+    Body : "Name:" + name + "<br/> User Email:" + email + "<br/> Number:" + number + "<br/> Message" + msg
+}).then(
+  message => alert(message)
+);
+
+    }
+ </script>
+
+
+
+</body>
+</html>

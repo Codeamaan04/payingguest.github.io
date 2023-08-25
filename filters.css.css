@@ -1,0 +1,84 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.main{
+   width: 100%;
+}
+.main-inner{
+    max-width: 1000px;
+    height: 90vh;
+    background: url("images/animation-engineering-buildings-042720-1.gif") no-repeat;
+    background-position: center;
+    margin: 0px 30px;
+    /* display: flex; */
+}
+.items{
+    display: flex;
+    align-items: center;
+    flex-basis: 50%;
+    margin:  5% 15%;
+    /* padding: 10% 10%; */
+}
+.items select{
+    padding: 20px 30px;
+    border: 1px solid whitesmoke;
+    font-size: 17px;
+    border-radius: 8px;
+    background-color: #38c19f;
+    color: white;
+    font-weight: 500;
+}
+.find-items{
+    border-radius: 8px;
+    border: 1px solid whitesmoke;
+    background-color: #38c19f;
+    padding: 10px 40px;
+    text-align: start;
+    color: white;
+    margin-left: 2%;
+
+}
+.find-items h3{
+    font-size: 17px;
+    font-weight: 500;
+
+}
+.find-items span{
+    font-size: 11px;
+    text-align: justify;
+    font-weight: 500;
+}
+.find-items i{
+    font-size: 24px;
+    position: absolute;
+
+    color:white;
+    top: 72px;
+    padding-left: 10px;
+   }
+   .items select :hover{
+    background-color: white;
+   }
+
+   @media only screen and (min-width:200px) and (max-width:567px){
+    .main-inner{
+        width: 100%;
+    }
+    .items{
+        flex-direction: column;
+         
+        
+    }
+    .find-items{
+        margin-top:20px;
+        flex-direction: column;
+    }
+    .find-items i{
+        position: absolute;
+        top: 120px;
+    }
+
+   }

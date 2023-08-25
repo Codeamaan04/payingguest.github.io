@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Schedule Visit Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    
+    .container-form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .container-form h2 {
+      text-align: center;
+      color: #4287f5;
+      margin-bottom: 20px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+    
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #4287f5;
+      border-radius: 4px;
+      font-size: 14px;
+      color: #4287f5;
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+    }
+    
+    .form-group input[type="submit"] {
+      width: 50%;
+      padding: 8px 15px;
+      background-color: #4287f5;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .form-group input[type="submit"]:hover {
+      background-color: #3366cc;
+    }
+    
+    /* Additional Styles */
+    .container-form {
+      border: 2px solid #ddd;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-group input[type="text"]:focus,
+    .form-group input[type="email"]:focus,
+    .form-group textarea:focus {
+      border-color: #3366cc;
+    }
+    
+    .form-group input[type="submit"] {
+      background-color: #4287f5;
+      transition: background-color 0.3s ease;
+    }
+    
+    .form-group input[type="submit"]:hover {
+      background-color: #3366cc;
+    }
+    
+    .form-group input[type="submit"]:focus {
+      outline: none;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Flex Layout */
+    .form-group.flex {
+      display: flex;
+      align-items: center;
+    }
+    
+    .form-group.flex label {
+      flex-basis: 17%;
+    }
+    
+    .form-group.flex input[type="date"],
+    .form-group.flex input[type="time"] {
+      flex-basis: 55%;
+    }
+    
+    .form-group.flex input[type="submit"] {
+      width: auto;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-form">
+    <h2 style="color: #4287f5;">Schedule Visit Form</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required>
+      </div>
+      <div class="form-group flex">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+      <div class="form-group flex">
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+      </div>
+      <div class="form-group">
+        <center>
+        <input type="submit" value="Schedule Visit">
+    </center>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

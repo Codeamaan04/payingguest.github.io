@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="solostyle.css" />
+    <link rel="stylesheet" href="media.css" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function(){
+  
+  $('#menu-bar').click(function(){
+      $(this).toggleClass('fa-times');
+      $('.navbar').toggleClass('nav-toggle');
+  });
+  });
+
+  
+  </script>
+  <script>
+    function scheduleopen(){
+      const scheduleform= document.getElementById('schedule-form');
+      scheduleform.style.display='block';
+    }
+    function scheduleclose()
+    {
+    const scheduleform= document.getElementById('schedule-form');
+    scheduleform.style.display='none';
+    
+  }
+  // const scheduleform= document.getElementById('schedule-form');
+  // const Visit = document.getElementById('Visit');
+  // const close = document.getElementById('schedule-close');
+  // Visit.addEventListener('click' , function show() {
+  // });
+  </script>
+  <script>
+  function bookopen(){
+      const bookform= document.getElementById('booking');
+      bookform.style.display='block';
+    }
+    function bookingclose()
+    {
+    const bookform= document.getElementById('booking');
+    bookform.style.display='none';
+    
+  }
+  </script>
+  <script>
+    function filteropen(){
+        const filterform= document.getElementById('filterscheck');
+        filterform.style.display='block';
+      }
+      function filterclose()
+      {
+      const filterform= document.getElementById('filterscheck');
+      filterform.style.display='none';
+      
+    }
+    </script>
+  
+
+    <style>
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+:root {
+  --yellow:#3b8d34;
+  --black:#111;
+  --white:#fff;
+  --light-color:#666;
+  --light-bg:#eee;
+  --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+  --border:.1rem solid rgba(0,0,0,.3);
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  /* overflow:auto; */
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--yellow);
+}
+
+section {
+  padding: 14rem 40%;
+  padding-right: 20%;
+  
+}
+      .heading {
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  color: var(--black);
+  text-transform: capitalize;
+  padding-left: 1rem;
+  border-left: 1rem solid var(--yellow);
+}
+      header{
+  position: fixed;
+  top:0; left:0;
+  z-index: 1000;
+  width:100%;
+  background:#fff;
+  padding:1.5rem 10%;
+  box-shadow: 0 .3rem 2rem rgba(0,0,0,.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+header .logo img{
+  height:5rem;
+}
+
+header .navbar ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+header .navbar ul li{
+  margin-left: 3rem;
+}
+
+header .navbar ul li a{
+  font-size: 1.7rem;
+  color:#666;
+}
+
+header .navbar ul li a.active,
+header .navbar ul li a:hover{
+  color:var(--yellow);
+}
+
+header #menu-bar{
+  font-size: 3rem;
+  color:#666;
+  cursor: pointer;
+  display: none;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background: var(--black);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+.btn:hover {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header {
+    padding: 1.5rem 2rem;
+  }
+  section {
+    padding: 3rem 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+  section {
+    padding: 3rem 2rem;
+  }
+  .header #menu-btn {
+    display: inline-block;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-top: var(--border);
+    border-bottom: var(--border);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    -webkit-transition: .2s linear;
+    transition: .2s linear;
+  }
+  .header .navbar.active {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .header .navbar a {
+    display: block;
+    margin: 2rem;
+  }
+}
+
+@media (max-width:768px){
+
+
+header #menu-bar{
+    display: block;
+}
+
+header .navbar{
+    position: fixed;
+    top:8rem; left:0;
+    width:100%;
+    background:var(--yellow);
+    border-top: .2rem solid rgba(0,0,0,.1);
+    transform:scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+}
+
+header .navbar ul{
+    flex-flow: column;
+    padding:2rem;
+}
+
+header .navbar ul li{
+    margin:1.5rem;
+    width: 100%;
+}
+
+header .navbar ul li a{
+    display: block;
+    color:#fff;
+    padding-left: 2rem;
+    border-left: .2rem solid #fff;
+    font-size: 2rem;
+}
+
+header .navbar ul li a:hover,
+header .navbar ul li a.active{
+    color:#333;
+    border-color: #333;
+}
+
+.fa-times{
+    transform:rotate(180deg);
+}
+
+header .navbar.nav-toggle{
+    transform:scaleY(1);
+    opacity: 1;
+}
+}
+      
+@keyframes fade{
+  from{
+    opacity:0.4;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+
+#slider{
+  margin:0 auto;
+  width:80%;
+  overflow:hidden;
+}
+
+.slides{
+  overflow:hidden;
+  animation-name:fade;
+  animation-duration:1s;
+  display:none;
+  margin-top: 7rem;
+}
+
+img{
+  width:100%;
+}
+
+#dot{
+  margin:0 auto;
+  text-align:center;
+}
+.dot{
+  display:inline-block;
+  border-radius:50%;
+  background:#d3d3d3;
+  padding:8px;
+  margin:10px 5px;
+}
+.active{
+  background:white;
+}
+
+@media (max-width:567px){
+  #slider{
+    width:100%;
+  }
+}
+
+#heading{
+  display:block;
+  text-align:center;
+  font-size:2em;
+  margin:10px 0px;
+
+}
+
+footer{
+  background-color: #000000ff;
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  padding: 3rem 1rem;
+}
+.container {
+ max-width: 1140px;
+ margin: 0 auto;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+
+
+}
+.row{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-top: 10%;
+}
+
+.col{
+ min-width: 250px;
+ color:#f2f2f2f2;
+ font-family: poppins;
+ padding:0 2rem;
+}
+.col .logo{
+ width: 100px;
+ margin-bottom:25px;
+}
+.col h3{
+ color:#ff014fff;
+ margin-bottom: 20px;
+ position: relative;
+ cursor: pointer;
+}
+.col h3::after{
+ content: '';
+ height:3px;
+ width:0px;
+ background-color: #ff014fff;
+ position: absolute;
+ bottom: 0;
+ left:0;
+ transition: 0.3s ease;
+
+}
+.col h3:hover::after{
+ width:30px
+}
+.col .social a i{
+ color:#ff014fff;
+ margin-top:2rem;
+ margin-right: 5px;
+ transition: 0.3s ease;
+}
+.col .social a i:hover{
+ transform: scale(1.5);
+ filter:grayscale(25);
+}
+.col .links a{
+ display: block;
+ text-decoration: none;
+ color:#f2f2f2;
+ margin-bottom: 5px;
+ position: relative;
+ transition: 0.3s ease;
+}
+.col .links a::before{
+ content:'';
+ height: 16px;
+ width:3px;
+ position: absolute;
+ top:5px;
+ left:-10px;
+ background-color: #ff014fff;
+ transition: 0.5s ease;
+ opacity: 0;
+}
+.col .links a:hover::before{
+ opacity: 1;
+}
+.col .links a:hover{
+ transform: translateX(-8px);
+ color:#ff014fff;
+}
+.col .contact-details{
+ display: inline-flex;
+ justify-content: space-between;
+ margin-right: 15;
+}
+.col .contact-details i{
+ margin-right:15px;
+}
+
+
+ .credit {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  padding-top: 2.5rem;
+  font-size: 2rem;
+  color: #666;
+  border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+
+ .credit span {
+  color: #103cd0;
+}
+
+    </style>
+</head>
+<body>
+  <header>
+
+    <a href="#" class="logo"><img src="images/logo.png" alt=""></a>
+
+    <div id="menu-bar" class="fas fa-bars"></div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="file:///C:/Users/Acer/Desktop/demo%20project/demo.html#home">Home</a></li>
+            <li><a href="#pg">PG</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#contact">contact</a></li>
+            <li> <a class="bton" href="login.html" title="Sign In">Sign In</a></li>
+         <li> <a class="bton" href="register.html" title="Sign Up">Sign Up</a></li>
+            
+            
+            
+        </ul>
+    </nav>
+
+</header>
+    <span id="heading"></span>
+    <div id="slider">  
+    <div class="slides">  
+      <img src="images/bannerpost.png" width="50%" />
+     </div>
+      
+      <div class="slides">  
+      <img src="images/Desktop - 1 (online-video-cutter.com).gif" width="100%" />
+    </div>
+   
+
+      
+      
+      
+      <div id="dot"><span class="dot"></span><span class="dot"></span>
+     </div>
+     
+    </div>
+  </div> 
+  <div class="searchbar">
+    <div class="input-box">
+      <i class="uil uil-search"></i>
+      <input type="text" placeholder="Find your best PG" />
+      <button class="button">Search</button>
+    </div>
+    </div>
+ <!-- all buttons -->
+ <div class="allbtns">
+  <div class="select-items">
+      <select name="states" id=""placeholder="State" > 
+          <option value="" disabled selected hidden style="color: green;"> Select State</option>
+          <option value="">jodhpur</option>
+          <option value="">jodhpur</option>
+          <option value="">jodhpur</option>
+          
+          
+      </select>
+      
+</div>
+
+<div class="select-items">
+  <select name="" id="">
+       <option value="" disabled selected hidden style="color: green;"> Select City</option>
+      <option value="">jodhpur</option>
+      <option value="">jodhpur</option>
+      <option value="">jodhpur</option>
+      
+      
+  </select>
+
+</div>
+
+<div class="select-items">
+<select name="" id="">
+   <option value="" disabled selected hidden style="color: green;"> Amenites</option>
+  <option value="">jodhpur</option>
+  <option value="">jodhpur</option>
+  <option value="">jodhpur</option>
+  
+  
+</select>
+<button class="btnfilter" onclick="filteropen()"><i class="fa-solid fa-filter fa-beat i"></i> Filters</button>
+
+</div>
+</div>
+<!-- close all buttons -->
+<div class="main">
+
+  <div class="states">
+            </div>
+   
+  <div class="inner-items" id="filterscheck">
+      <h2>Filters</h2>
+      <button id="filter-close" onclick="filterclose()">&times;</button>
+          <h3>Services</h3>
+          <div class="filtersitems">
+              <button>Hot and Delicious Meals</button>
+              <button>High-Speed WIFI</button>
+              <button>Power Backup</button>
+              <button>Laundry Service</button>
+              <button>Professional Housekeeping</button>
+              <button>Spacious Refrigerator</button>
+              <button>24x7 Security Surveillance</button>
+              <button>   Flat Screen Television</button>
+              <button>Washing Machine</button>
+      </div>
+      <div class="savebtn">
+          <p><a href="">clear</a></p>
+          <button>Save</button>
+      </div>
+
+  </div>
+</div>
+  <div class="hostel-items">
+    <h3 style="text-align: center;">37 PGs waiting to be yours in Delhi</h3>
+    <div class="hostel-inner">
+        <div class="img">
+            <img src="images/flatroom.jpg" alt="">
+        </div>
+        <div class="text-item">
+            <h4>Bostan house</h4>
+            <p>north campus</p>
+            
+            <div class="gender">
+               <span>male</span>
+               <span>double</span>
+        
+            </div>
+            <p>amenties</p>
+            <div class="amenties">
+                <div class="amenties-item">
+                   <h3>Air conditioning</h3>
+                </div>
+                <div class="amenties-item">
+                    <h3>Attached Washroom</h3>
+                 </div>
+                 <div class="amenties-item">
+                    <h3>Cafeita Area</h3>
+                 </div>
+            </div>
+            
+            <div class="rates">
+                <div class="rates-item">
+                    <p>starts from</p>
+                <h2>₹10000</h2>
+                </div>    
+                <div class="btns">
+                    <button class="bgset" id="Visit" onclick="scheduleopen()">SECHDULE A VISIT</button>
+                     <button class="bgset" onclick="bookopen()">Book Now</button>
+                
+                    
+
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <div class="hostel-inner">
+        <div class="img">
+            <img src="images/flatroom.jpg" alt="">
+        </div>
+        <div class="text-item">
+            <h4>Bostan house</h4>
+            <p>north campus</p>
+            
+            <div class="gender">
+               <span>male</span>
+               <span>double</span>
+        
+            </div>
+            <p>amenties</p>
+            <div class="amenties">
+                <div class="amenties-item">
+                   <h3>Air conditioning</h3>
+                </div>
+                <div class="amenties-item">
+                    <h3>Attached Washroom</h3>
+                 </div>
+                 <div class="amenties-item">
+                    <h3>Cafeita Area</h3>
+                 </div>
+            </div>
+            
+            <div class="rates">
+                <div class="rates-item">
+                    <p>starts from</p>
+                <h2>₹7000</h2>
+                </div>    
+                <div class="btns">
+                    <button class="bgset">SECHDULE A VISIT</button>
+                    <button class="bgset">Book Now</button>
+                
+                
+
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    <div class="hostel-inner">
+        <div class="img">
+            <img src="images/flatimage2.jpg" alt="">
+        </div>
+        <div class="text-item">
+            <h4>Bostan house</h4>
+            <p>north campus</p>
+            
+            <div class="gender">
+               <span>male</span>
+               <span>double</span>
+        
+            </div>
+            <p>amenties</p>
+            <div class="amenties">
+                <div class="amenties-item">
+                   <h3>Air conditioning</h3>
+                </div>
+                <div class="amenties-item">
+                    <h3>Attached Washroom</h3>
+                 </div>
+                 <div class="amenties-item">
+                    <h3>Cafeita Area</h3>
+                 </div>
+            </div>
+            
+            <div class="rates">
+                <div class="rates-item">
+                    <p>starts from</p>
+                <h2>₹8000</h2>
+                </div>    
+                <div class="btns">
+                    <button class="bgset">SECHDULE A VISIT</button>
+                    <button class="bgset">Book Now</button>
+                
+                
+
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+   
+    
+</div>
+ <div id="schedule-form">
+  <div class="container-form">
+    <button id="schedule-close" onclick="scheduleclose()">&times;</button>
+    <div class="form-group schedule-heading">
+
+      <h2 style="color: #4287f5;">Schedule a Visit</h2>
+    </div>
+  <form>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input type="text" id="phone" name="phone" required>
+    </div>
+    <div class="form-group flex">
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+    </div>
+    <div class="form-group flex">
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+    </div>
+    <div class="form-group">
+      <center>
+      <input type="submit" value="Schedule Visit">
+  </center>
+    </div>
+  </form>
+</div>
+</div>
+
+
+
+<div id="booking" class="section">
+  <div class="section-center">
+    
+      <div class="container">
+          <div class="row">
+              <div class="booking-form">
+                  <div class="form-header">
+                      <h2>Book Your Room</h2>
+                  </div>
+                  <button id="booking-close" onclick="bookingclose()">&times;</button>
+                  <form>
+                      <div class="form-group">
+                          <input class="form-control" type="text" placeholder="Country, ZIP, city...">
+                          <span class="form-label">Destination</span>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <input class="form-control" type="date" required>
+                                  <span class="form-label">Check In</span>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <input class="form-control" type="date" required>
+                                  <span class="form-label">Check out</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-4">
+                              <div class="form-group">
+                                  <select class="form-control" required>
+                                      <option value="" selected hidden>no of rooms</option>
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                  </select>
+                                  <span class="select-arrow"></span>
+                                  <span class="form-label">Rooms</span>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="form-group">
+                                  <select class="form-control" required>
+                                      <option value="" selected hidden>no of adults</option>
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                  </select>
+                                  <span class="select-arrow"></span>
+                                  <span class="form-label">Adults</span>
+                              </div>
+                          </div>
+                          <div class="col-md-4">
+                              <div class="form-group">
+                                  <select class="form-control" required>
+                                      <option value="" selected hidden>no of child</option>
+                                      <option>0</option>
+                                      <option>1</option>
+                                      <option>2</option>
+                                  </select>
+                                  <span class="select-arrow"></span>
+                                  <span class="form-label">Child</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <input class="form-control" type="email" placeholder="Enter your Email">
+                                  <span class="form-label">Email</span>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <input class="form-control" type="tel" placeholder="Enter you Phone">
+                                  <span class="form-label">Phone</span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-btn">
+                          <button class="submit-btn">Book Now</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div> 
+
+      <!-- footer section starts  -->
+      <footer>
+        <div class="container">
+            <div class="row">
+                  <div class="col" id="company">
+                      <img src="images/logo.png" alt="" class="logo">
+                      <p>
+                        SUCCESS ISN'T YOUR HOME.ITS PAYING GUEST HOUSE.THOSE WHO WILL PAY THEY WILL STAY
+                      </p>
+                      <div class="social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                      </div>
+                  </div>
+      
+      
+                  <div class="col" id="services">
+                     <h3>Location</h3>
+                     <div class="links">
+                        <a href="#">Jodhpur</a>
+                        <a href="#">Jaipur</a>
+                        <a href="#">Jaisalmer</a>
+                        <a href="#">Udaipur</a>
+                     </div>
+                  </div>
+      
+                  <div class="col" id="useful-links">
+                     <h3>Quick Links</h3>
+                     <div class="links">
+                        <a href="#">Home</a>
+                        <a href="#">PG</a>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                     </div>
+                  </div>
+      
+                  <div class="col" id="contact">
+                      <h3>Contact</h3>
+                      <div class="contact-details">
+                    <i class='	fas fa-location-arrow' style="color:red"></i>
+                         <p>Shastri Nagar, Jodhpur, Rajasthan 342003
+                        </p>
+                      </div>
+                      <div class="contact-details">
+                         <i class="fa fa-phone"></i>
+                         <p>+91-6377409450</p>
+                      </div>
+                  </div>
+            </div>
+      
+        </div>
+        <div class="credit"> created&developed by <span>Socius Coder</span> | all rights reserved! </div>
+     
+      </footer>
+     
+     
+
+<!-- footer section ends -->
+    <script>
+        var index = 0;
+var slides = document.querySelectorAll(".slides");
+var dot = document.querySelectorAll(".dot");
+
+function changeSlide(){
+
+  if(index<0){
+    index = slides.length-1;
+  }
+  
+  if(index>slides.length-1){
+    index = 0;
+  }
+  
+  for(let i=0;i<slides.length;i++){
+    slides[i].style.display = "none";
+    dot[i].classList.remove("active");
+  }
+  
+  slides[index].style.display= "block";
+  dot[index].classList.add("active");
+  
+  index++;
+  
+  setTimeout(changeSlide,3500);
+  
+}
+
+changeSlide();
+    </script>
+        
+</body>
+</html>

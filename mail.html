@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mail</title>
+    <style>
+        
+.contact .row{
+  display: flex;
+  flex-wrap: wrap-reverse;
+  gap:1.5rem;
+  align-items: center;
+}
+
+.contact .row form{
+  flex:1 1 40rem;
+  padding:2rem 2.5rem;
+  box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+  border:.1rem solid rgba(0,0,0,.1);
+  background: #fff;
+  border-radius: .5rem;
+}
+
+.contact .row .image{
+  flex:1 1 40rem;
+}
+
+.contact .row .image img{
+  width: 100%;
+}
+
+.contact .row form .box{
+  padding:1rem;
+  font-size: 1.7rem;
+  color:#333;
+  text-transform: none;
+  border:.1rem solid rgba(0,0,0,.1);
+  border-radius: .5rem;
+  margin:.7rem 0;
+  width: 100%;
+}
+
+.contact .row form .box:focus{
+  border-color: var(--pink);
+}
+
+.contact .row form textarea{
+  height: 15rem;
+  resize: none;
+}
+    </style>
+</head>
+<body>
+   
+<section class="contact" id="contact">
+
+    <h1 class="heading" style="font-size: 50px; margin-left: 0%;"> <span> contact </span> us </h1>
+ 
+    <div class="row">
+ 
+        <form onsubmit="mail(); reset(); return false;">
+            <input type="text" placeholder="name"  id="name" class="box">
+            <input type="email" placeholder="email" id="Email" class="box">
+            <input type="number" placeholder="number" id="phone" class="box">
+            <textarea name="" class="box" placeholder="message" id="message" cols="30" rows="10"></textarea>
+            <input type="submit" value="send message" class="btn">
+        </form>
+ 
+        <div class="image">
+            <img src="images/contact.jpg" alt="">
+        </div>
+ 
+    </div>
+ 
+ </section>
+ <script src="https://smtpjs.com/v3/smtp.js"></script> 
+ <script>
+    function mail(){ 
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("Email").value;
+        let number = document.getElementById("phone").value;
+        let msg = document.getElementById("message").value;
+
+        Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "mohammadamaan11054@gmail.com",
+    Password : "22B167E4BCFED1B29A36A4C0A1F991457F89",
+    To : 'amaanrafiq0410@gmail.com',
+    From : "mohammadamaan11054@gmail.com",
+    Subject : "mail from contact form",
+    Body : "Name:" + name + "<br/> User Email:" + email + "<br/> Number:" + number + "<br/> Message" + msg
+}).then(
+  message => alert(message)
+);
+
+    }
+ </script>
+</body>
+</html>

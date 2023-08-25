@@ -1,0 +1,144 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family:  sans-serif;
+}
+.hostel-main{
+    width: 100%;
+    height: 500px;
+    background-image: url("images/animation-engineering-buildings-042720-1.gif");
+    background-position: center;
+    background-size: 1300px;
+    background-repeat: no-repeat;
+    
+
+}
+.hostel-items{
+    width: 1000px;
+    margin:   auto;
+    padding: 30px 0px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.inner-items{
+    width: 100%;
+    padding: 50px 10px;
+    border-radius: 20px;
+    
+}
+.inner-items select{
+    padding: 10px 20px;
+    color: white;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    background-color: rgb(24, 131, 143);
+
+}
+.search-city{
+    width: 100%;
+    margin: 5%;
+}
+
+.search-items{
+    border: none; 
+}
+.search-items input {
+    font-weight: 500;
+    font-size: 16px;
+   padding: 10px 30px;
+   background-color: white;
+   border: none;
+   border-radius: 12px;
+}
+.hostel-facilities{
+    width: 100%;
+    margin: 30px 0px ;
+    padding: 0px 20%;
+  
+}
+.hostel-facilities span{
+    font-size: 24px;
+    margin-left: 10px;
+    font-weight: 600;
+ border-bottom: 2px solid rgb(24, 131, 143);
+
+
+}
+.facilities-inner{
+    width: 1000px;
+   padding-top: 30px;
+   display: flex;
+    gap: 20PX   ;
+   margin-left: 10px;
+}
+.img{
+    width: 350px;
+}
+.img img{
+    width: 100%;
+}
+.inner-texts h2{
+    font-weight: 600;
+    font-size: 23px;
+}
+.inner-input{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+.inner-input span{
+    padding: 10px 27px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    margin: 10px;
+    font-weight: 600;
+    background-color: rgb(24, 131, 143);
+}
+.inner-input h3{
+    padding: 10px 27px;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    margin: 10px;
+    font-weight: 600;
+    background-color: rgb(24, 131, 143);
+}
+.hostel-rate{
+    margin-top: 20px;
+}
+.hostel-rate p{
+    margin: 10px 0px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.btn button{
+    margin-left: 10%;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: none;
+    background-color: rgb(24, 131, 143);
+   border-radius: 12px;
+   font-size: 17px;
+   font-weight: 600;
+   color: white;
+}
+@media only screen and (max-width: 600px){
+    .facilities-inner{
+        flex-direction: column;
+        border: 1px solid red;
+    }
+} 

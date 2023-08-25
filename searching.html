@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>searching</title>
+    <style>
+       .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 4px;
+  width: 400px;
+  height: 60px;
+  transition: width 0.3s;
+}
+
+.search-bar:hover {
+  width: 500px;
+}
+
+#filter {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+}
+
+#searchInput {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#searchBtn {
+  padding: 5px;
+  font-size: 14px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#searchBtn span {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+/* Animation Keyframes */
+@keyframes stretch {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Animation Classes */
+.animated-search-input {
+  animation: stretch 0.6s forwards;
+}
+
+.animated-search-btn {
+  animation: fadeIn 0.6s forwards;
+  animation-delay: 0.3s;
+}
+    </style>
+</head>
+<body>
+    <div class="search-bar">
+        <select id="filter">
+          <option value="all">All</option>
+          <option value="category1">Category 1</option>
+          <option value="category2">Category 2</option>
+          <option value="category3">Category 3</option>
+        </select>
+        <div class="search-input">
+          <input type="text" id="searchInput" placeholder="Search...">
+          <button type="button" id="searchBtn"><span>&#128269;</span></button>
+        </div>
+      </div>
+      
+      
+      
+</body>
+</html>

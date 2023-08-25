@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fillstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        function filteropen(){
+            const filterform= document.getElementById('filterscheck');
+            filterform.style.display='block';
+          }
+          function filterclose()
+          {
+          const filterform= document.getElementById('filterscheck');
+          filterform.style.display='none';
+          
+        }
+        </script>
+        
+</head>
+<body>
+    <!-- all buttons -->
+    <div class="allbtns">
+        <div class="select-items">
+            <select name="states" id=""placeholder="State" > 
+                <option value="" disabled selected hidden style="color: green;"> Select State</option>
+                <option value="">jodhpur</option>
+                <option value="">jodhpur</option>
+                <option value="">jodhpur</option>
+                
+                
+            </select>
+            
+    </div>
+
+    <div class="select-items">
+        <select name="" id="">
+             <option value="" disabled selected hidden style="color: green;"> Select City</option>
+            <option value="">jodhpur</option>
+            <option value="">jodhpur</option>
+            <option value="">jodhpur</option>
+            
+            
+        </select>
+    
+</div>
+
+<div class="select-items">
+    <select name="" id="">
+         <option value="" disabled selected hidden style="color: green;"> Amenites</option>
+        <option value="">jodhpur</option>
+        <option value="">jodhpur</option>
+        <option value="">jodhpur</option>
+        
+        
+    </select>
+    <button class="btnfilter" onclick="filteropen()"><i class="fa-solid fa-filter fa-beat i"></i> Filters</button>
+</div>
+    </div>
+    <!-- close all buttons -->
+    <div class="main">
+
+        <div class="states">
+                  </div>
+         
+        <div class="inner-items" id="filterscheck">
+            <div>
+            <h2>Filters</h2>
+            <button id="filter-close" onclick="filterclose()">&times;</button>
+        </div>
+                <h3>Services</h3>
+                <div class="filtersitems">
+                    <button>Hot and Delicious Meals</button>
+                    <button>High-Speed WIFI</button>
+                    <button>Power Backup</button>
+                    <button>Laundry Service</button>
+                    <button>Professional Housekeeping</button>
+                    <button>Spacious Refrigerator</button>
+                    <button>24x7 Security Surveillance</button>
+                    <button>   Flat Screen Television</button>
+                    <button>Washing Machine</button>
+            </div>
+            <div class="savebtn">
+                <p><a href="">clear</a></p>
+                <button>Save</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

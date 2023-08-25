@@ -1,0 +1,31 @@
+@media only screen and (min-width:200px) and (max-width:568px){
+   .hostel-items{
+    flex-direction: column;
+   
+
+   }
+   
+    .hostel-inner{
+        box-shadow: 0px 0px 7px 3px gray;
+        flex-direction: column;
+        padding-left: 10px;
+    }
+
+    .img{
+        flex-direction: column;
+       border-radius: 10px;
+    }
+    .img img{
+        border-radius: 10px;
+
+    }
+    .amenties-item{
+        flex-direction: column;
+    }
+    
+    .btns{
+        flex-direction: row;
+        display: flex;
+    }
+
+}
